@@ -1,50 +1,332 @@
-
-.blue{
-    color: blue;
-}
-.red{
-    color: red;
+/* Enhanced post styling with modern design */
+.blue {
+    color: #3b82f6;
 }
 
-.ArticleActionBtn{
-    padding: 1px;
+.red {
+    color: #ef4444;
+}
+
+.ArticleActionBtn {
+    padding: 8px;
     cursor: pointer;
     vertical-align: middle;
     width: 24px;
-    height: auto;
+    height: 24px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.footerText{
-    font-size: medium;
-    margin-right: 10px;
-    padding-inline: 10px;
+.ArticleActionBtn:hover {
+    background: #f1f5f9;
+    transform: scale(1.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
-.content{
+
+.ArticleActionBtn.blue:hover {
+    background: #dbeafe;
+    color: #2563eb;
+}
+
+.ArticleActionBtn.red:hover {
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+.footerText {
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-right: 16px;
+    padding-inline: 8px;
+    color: #64748b;
+    transition: color 0.3s ease;
+}
+
+.content {
     white-space: pre-wrap;
     text-align: left;
-    padding: 10px;
-    line-break:anywhere;
+    padding: 20px 0;
+    line-break: anywhere;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #1e293b;
 }
 
-.PreviewContent{
-    max-height: 300px;
+.PreviewContent {
+    max-height: 400px;
     overflow: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 #f1f5f9;
 }
 
-.image{
-    margin: auto;
-    width: auto;
-    max-height: 300px;
+.PreviewContent::-webkit-scrollbar {
+    width: 6px;
 }
 
-.OpenInNew{
+.PreviewContent::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 3px;
+}
+
+.PreviewContent::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+}
+
+.PreviewContent::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+.image {
+    margin: 16px auto;
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    transition: all 0.3s ease;
+}
+
+.image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.OpenInNew {
     color: white;
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: 12px;
+    right: 12px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 8px;
+    border-radius: 8px;
+    backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
 }
 
-.imageHolder{
+.OpenInNew:hover {
+    background: rgba(0, 0, 0, 0.8);
+    transform: scale(1.1);
+}
+
+.imageHolder {
     position: relative;
-    background-color: rgba(0, 0, 0, 0.616);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 16px 0;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.imageHolder img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.imageHolder:hover img {
+    transform: scale(1.05);
+}
+
+/* Enhanced action buttons container */
+.feed .action-buttons {
+    border-top: 1px solid #e2e8f0;
+    padding-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    gap: 8px;
+}
+
+.feed .action-buttons span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.feed .action-buttons span:hover {
+    background: #f8fafc;
+    transform: translateY(-1px);
+}
+
+/* Post content enhancements */
+.content p {
+    margin-bottom: 12px;
+}
+
+.content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Link styling within content */
+.content a {
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.content a:hover {
+    color: #2563eb;
+    text-decoration: underline;
+}
+
+/* Code blocks in content */
+.content code {
+    background: #f1f5f9;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 0.85em;
+    color: #1e293b;
+    border: 1px solid #e2e8f0;
+}
+
+.content pre {
+    background: #f8fafc;
+    padding: 16px;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 16px 0;
+    border: 1px solid #e2e8f0;
+}
+
+.content pre code {
+    background: none;
+    padding: 0;
+    border: none;
+    font-size: 0.875rem;
+}
+
+/* Quote styling */
+.content blockquote {
+    border-left: 4px solid #3b82f6;
+    padding-left: 16px;
+    margin: 16px 0;
+    font-style: italic;
+    color: #64748b;
+    background: #f8fafc;
+    padding: 16px;
+    border-radius: 0 8px 8px 0;
+}
+
+/* List styling */
+.content ul,
+.content ol {
+    padding-left: 24px;
+    margin: 12px 0;
+}
+
+.content li {
+    margin-bottom: 4px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .content {
+        padding: 16px 0;
+        font-size: 0.9rem;
+    }
+    
+    .image {
+        max-height: 300px;
+        margin: 12px auto;
+    }
+    
+    .feed .action-buttons {
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+    
+    .feed .action-buttons span {
+        padding: 6px 8px;
+        font-size: 0.8rem;
+    }
+    
+    .ArticleActionBtn {
+        width: 20px;
+        height: 20px;
+        padding: 6px;
+    }
+    
+    .footerText {
+        font-size: 0.8rem;
+        margin-right: 12px;
+        padding-inline: 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .content {
+        padding: 12px 0;
+        font-size: 0.875rem;
+    }
+    
+    .image {
+        max-height: 250px;
+        margin: 8px auto;
+    }
+    
+    .OpenInNew {
+        top: 8px;
+        right: 8px;
+        padding: 6px;
+    }
+    
+    .feed .action-buttons span {
+        padding: 4px 6px;
+        font-size: 0.75rem;
+    }
+}
+
+/* Animation for new posts */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.feed {
+    animation: slideInUp 0.4s ease-out;
+}
+
+/* Loading state */
+.feed.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.feed.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid #e2e8f0;
+    border-top: 2px solid #3b82f6;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
 }

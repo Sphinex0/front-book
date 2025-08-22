@@ -1,137 +1,502 @@
-/* Centering */
+/* Enhanced signup page styling */
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background: linear-gradient(135deg, #89f7fe, #66a6ff);
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Form box */
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(120, 119, 198, 0.2) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Form box with glassmorphism effect */
 .formBox {
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  width: 400px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(255, 255, 255, 0.2);
+  width: 100%;
+  max-width: 480px;
   text-align: center;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.formBox::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 20px 20px 0 0;
 }
 
 /* Heading */
 .heading {
-  margin-bottom: 20px;
-  font-size: 24px;
+  margin-bottom: 32px;
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.5px;
 }
 
 /* Input fields */
 .inputGroup {
-  margin-bottom: 12px;
+  margin-bottom: 20px;
   text-align: left;
+  position: relative;
 }
 
 .inputField {
   box-sizing: border-box;
   width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 14px;
-  transition: all 0.3s ease-in-out;
+  padding: 16px 20px;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 16px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(255, 255, 255, 0.8);
+  color: #374151;
+  font-weight: 500;
+  font-family: inherit;
 }
 
-/* Scale effect on focus */
+.inputField::placeholder {
+  color: #9ca3af;
+  font-weight: 400;
+}
+
+/* Enhanced focus effect */
 .inputField:focus {
-  border-color: #66a6ff;
-  box-shadow: 0px 0px 8px rgba(102, 166, 255, 0.6);
-  transform: scale(1.05);
+  outline: none;
+  border-color: #667eea;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 
+    0 0 0 4px rgba(102, 126, 234, 0.1),
+    0 4px 12px rgba(102, 126, 234, 0.15);
+  transform: translateY(-2px);
 }
 
-/* Textarea */
+/* Textarea specific styling */
 .textarea {
-  height: 80px;
-  resize: none;
+  height: 100px;
+  resize: vertical;
+  font-family: inherit;
+  line-height: 1.5;
 }
 
-/* File Input */
+/* File Input styling */
 .fileLabel {
   font-size: 14px;
-  color: #555;
-  margin-bottom: 5px;
+  color: #374151;
+  margin-bottom: 8px;
   display: block;
+  font-weight: 600;
 }
 
 .fileInput {
-  padding: 5px;
+  padding: 12px 16px;
+  background: #f9fafb;
+  border: 2px dashed #d1d5db;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.fileInput:hover {
+  border-color: #667eea;
+  background: #f3f4f6;
+}
+
+.fileInput:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+}
+
+.fileInput::file-selector-button {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 12px;
+  transition: all 0.3s ease;
+}
+
+.fileInput::file-selector-button:hover {
+  background: linear-gradient(135deg, #5a67d8, #6b46c1);
+  transform: translateY(-1px);
 }
 
 /* Submit Button */
 .submitBtn {
   width: 100%;
-  background: #66a6ff;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
-  padding: 10px;
+  padding: 16px 24px;
   border: none;
-  border-radius: 6px;
+  border-radius: 12px;
   font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
-  transition: 0.3s, transform 0.2s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.5px;
+  margin-top: 8px;
+}
+
+.submitBtn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.submitBtn:hover::before {
+  left: 100%;
 }
 
 /* Button hover effect */
 .submitBtn:hover {
-  background: #5590e3;
-  transform: scale(1.05);
+  background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+  transform: translateY(-3px);
+  box-shadow: 
+    0 10px 25px rgba(102, 126, 234, 0.3),
+    0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-/*popo out error*/
+.submitBtn:active {
+  transform: translateY(-1px);
+  box-shadow: 
+    0 5px 15px rgba(102, 126, 234, 0.3),
+    0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Error Popup */
 .errorPopup {
   position: fixed;
-  top: 20px;
+  top: 24px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #ff4d4d;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
   color: white;
-  padding: 12px 18px;
-  border-radius: 8px;
+  padding: 16px 24px;
+  border-radius: 12px;
   font-size: 14px;
-  font-weight: bold;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  font-weight: 600;
+  box-shadow: 
+    0 10px 25px rgba(239, 68, 68, 0.3),
+    0 4px 12px rgba(0, 0, 0, 0.15);
   display: flex;
   align-items: center;
-  gap: 10px;
-  animation: fadeIn 0.3s ease-in-out;
+  gap: 12px;
+  animation: slideInDown 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1000;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
 }
 
-/* Fade-in animation */
-@keyframes fadeIn {
+@keyframes slideInDown {
   from {
     opacity: 0;
-    transform: translateX(-50%) translateY(-10px);
+    transform: translateX(-50%) translateY(-30px);
   }
-
   to {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
   }
 }
 
-/* login Link Section */
+/* Login Link Section */
 .login-link {
   text-align: center;
-  margin-top: 0;
-  /* Remove top margin */
+  margin-top: 24px;
 }
 
 .login-link p {
   font-size: 14px;
+  color: #6b7280;
+  font-weight: 500;
 }
 
 .login-link a {
-  color: #007bff;
+  color: #667eea;
   text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.login-link a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  transition: width 0.3s ease;
+}
+
+.login-link a:hover::after {
+  width: 100%;
 }
 
 .login-link a:hover {
-  text-decoration: underline;
+  color: #5a67d8;
+}
+
+/* Form sections for better organization */
+.formSection {
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.formSection:last-of-type {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.formSection h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+/* Optional fields styling */
+.optionalField {
+  position: relative;
+}
+
+.optionalField::after {
+  content: 'Optional';
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 12px;
+  color: #9ca3af;
+  font-weight: 500;
+  background: #f9fafb;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 16px;
+  }
+  
+  .formBox {
+    padding: 32px 24px;
+    max-width: 100%;
+  }
+  
+  .heading {
+    font-size: 1.75rem;
+    margin-bottom: 24px;
+  }
+  
+  .inputField {
+    padding: 14px 16px;
+    font-size: 16px; /* Prevent zoom on iOS */
+  }
+  
+  .textarea {
+    height: 80px;
+  }
+  
+  .submitBtn {
+    padding: 14px 20px;
+    font-size: 16px;
+  }
+  
+  .formSection {
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 12px;
+  }
+  
+  .formBox {
+    padding: 24px 20px;
+    border-radius: 16px;
+  }
+  
+  .heading {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .inputGroup {
+    margin-bottom: 16px;
+  }
+  
+  .inputField {
+    padding: 12px 14px;
+  }
+  
+  .textarea {
+    height: 70px;
+  }
+  
+  .submitBtn {
+    padding: 12px 18px;
+  }
+  
+  .login-link p {
+    font-size: 13px;
+  }
+  
+  .formSection {
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+  }
+  
+  .formSection h3 {
+    font-size: 1rem;
+    margin-bottom: 12px;
+  }
+}
+
+/* Loading state */
+.submitBtn:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.submitBtn:disabled::before {
+  display: none;
+}
+
+/* Form validation states */
+.inputField:invalid {
+  border-color: #ef4444;
+}
+
+.inputField:valid {
+  border-color: #10b981;
+}
+
+/* Accessibility improvements */
+.inputField:focus-visible,
+.fileInput:focus-visible {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+}
+
+.submitBtn:focus-visible {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+}
+
+/* Animation for form appearance */
+@keyframes formSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.formBox {
+  animation: formSlideIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Progress indicator for form completion */
+.progressBar {
+  width: 100%;
+  height: 4px;
+  background: #f3f4f6;
+  border-radius: 2px;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+/* Success state for form submission */
+.formBox.success {
+  border-color: #10b981;
+  box-shadow: 
+    0 25px 50px -12px rgba(16, 185, 129, 0.25),
+    0 0 0 1px rgba(16, 185, 129, 0.2);
+}
+
+.formBox.success::before {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+/* Enhanced file input with drag and drop styling */
+.fileInput {
+  position: relative;
+  text-align: center;
+  padding: 24px 16px;
+}
+
+.fileInput::before {
+  content: '📁 Choose file or drag and drop';
+  display: block;
+  color: #6b7280;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.fileInput:hover::before {
+  color: #667eea;
+}
+
+.fileInput[data-has-file]::before {
+  content: '✅ File selected';
+  color: #10b981;
 }
